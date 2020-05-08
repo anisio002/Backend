@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "45260850-5aa6-4b1f-a3fb-dcc235c3f8b3",
+		"name": "API_Teste_MC_MT",
+		"description": "Testes efetuados.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Individuo",
+			"item": [
+				{
+					"name": "http://localhost:8080/individuos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3a760dc-425b-4a3b-a0b1-e0c713688265",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"name\": \"Alta Floresta\",\n        \"state\": \"MT\"\n   \t\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/individuos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"individuos"
+							]
+						},
+						"description": "Lista todos indivíduos presentes na tabela TAB_INDIVIDUO com seus respectivos endereços TAB_TELEFONES"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/individuos/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3a760dc-425b-4a3b-a0b1-e0c713688265",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"name\": \"Alta Floresta\",\n        \"state\": \"MT\"\n   \t\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/individuos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"individuos",
+								"1"
+							]
+						},
+						"description": "Procura um indivíduo por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/individuos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5d362308-f4d0-4402-b8ed-6afb57b97219",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "061a33d3-6f07-4b62-89eb-ad8d68b76947",
+								"exec": [
+									"pm.test(\"Status test\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\"\t: \"Luis Inácio da Silva\",\n\t\"dataNasc\" : \"1510934784\",\n\t\"email\" :\"luis@luis.com.br\",\n\t\n\t\"codDiscagem1\" :\"18\",\n\t\"telefone1\" :  \"2111-9145\",\n\t\"codDiscagem2\" : \"16\",\n\t\"telefone2\" :  \"2111-9145\",\n\t\"codDiscagem3\" : \"65\",\n\t\"telefone3\" : \"3051-8974\",\n\t\n\t\"rua\" : \"Salvador Dali\",\n\t\"complemento\" : \"Casa dos Fundos\",\n\t\"bairro\" : \"Jd. Canadá\",\n\t\"municipioId\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/individuos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"individuos"
+							]
+						},
+						"description": "Salva IndividuoDTO"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Municipios",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Telefones",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Enderecos",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "http://localhost:8080/api/status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3a760dc-425b-4a3b-a0b1-e0c713688265",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n        \"name\": \"Alta Floresta\",\n        \"state\": \"MT\"\n   \t\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"status"
+					]
+				},
+				"description": "Testa se API está ativa"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
